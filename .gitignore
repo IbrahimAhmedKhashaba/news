@@ -1,0 +1,15 @@
+/node_modules/
+/vendor/
+/public/hot
+/public/storage
+/storage/*.key
+/.env
+/storage/debugbar/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/testing/*
+/bootstrap/cache/*
+.DS_Store
+.idea/
+.vscode/
+/public/mix-manifest.json 
