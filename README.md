@@ -61,6 +61,16 @@ php artisan serve
 
 ---
 
+## 📬 API Documentation (Postman)
+
+Want to test the API live? (for site)
+
+👉 [Open Postman Documentation](https://documenter.getpostman.com/view/40282253/2sAYk7S4LM)
+
+You can import it directly in Postman or use it online.
+
+---
+
 📬 Contact
 For questions or feedback, feel free to reach me on:
 
