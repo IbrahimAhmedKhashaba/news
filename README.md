@@ -1,5 +1,11 @@
 # 🗞️ News Platform – Laravel 10
 
+[![Laravel](https://img.shields.io/badge/Laravel-10.x-red?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.1-blue?style=flat&logo=php&logoColor=white)](https://www.php.net/)
+[![License](https://img.shields.io/github/license/IbrahimAhmedKhashaba/news)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/IbrahimAhmedKhashaba/news)](https://github.com/IbrahimAhmedKhashaba/news/issues)
+[![Stars](https://img.shields.io/github/stars/IbrahimAhmedKhashaba/news?style=social)](https://github.com/IbrahimAhmedKhashaba/news/stargazers)
+
 A Laravel-based news publishing platform that allows users to register, write, and manage articles through an interactive dashboard. Admins can review, edit, and control all content. The app supports real-time notifications and has a mobile-friendly interface.
 
 ---
@@ -7,13 +13,15 @@ A Laravel-based news publishing platform that allows users to register, write, a
 ## 🚀 Features
 
 - User & Admin Authentication
+- Social Login via Facebook & Google (OAuth)
 - Article Creation with Rich Text Editor
 - Admin Dashboard with Article Control
 - RESTful API Integration
 - Real-time Notifications with Pusher
 - Role-Based Access (Gates & Policies)
 - Livewire Components for Dynamic UI
-- Caching & Debugbar for Performance
+- Redis (via Predis) for Caching & Sessions
+- Mailtrap Integration for Email Testing
 - Responsive Design
 
 ---
@@ -40,7 +48,9 @@ cd news
 composer install
 cp .env.example .env
 php artisan key:generate
-# Set up DB credentials in your .env
+
+# Set your DB, Mailtrap, Socialite, Redis, and Pusher credentials in your .env
+
 php artisan migrate
 php artisan db:seed
 php artisan serve
