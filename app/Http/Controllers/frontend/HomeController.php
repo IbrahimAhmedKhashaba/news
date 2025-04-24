@@ -21,6 +21,8 @@ class HomeController extends Controller
             $category->posts = $category->posts()->active()->limit(4)->get();
             return $category;
         });
+
+        
         return view('frontend.index' , compact(['posts' , 'greatest_views_posts' , 'oldest_posts' , 'category_with_posts']));
     }
 }

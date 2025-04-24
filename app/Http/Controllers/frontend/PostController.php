@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\User;
 use App\Notifications\NewCommentNotify;
 use Illuminate\Http\Request;
 
@@ -21,8 +22,7 @@ class PostController extends Controller
             },
             'category'
         ])->where('slug' , $slug)->firstOrFail();
-        $mainPost->num_of_views;
-        $mainPost->save();
+        $mainPost->increment('num_of_views');
         $category = $mainPost->category;
         $comments = $mainPost->comments;
         $posts_belongs_to_category = $category->posts()->active()->with('images')->select('id', 'slug', 'title')->limit(5)->get();
@@ -36,6 +36,9 @@ class PostController extends Controller
         $post = Post::active()->with(['comments' => function ($query) {
             $query->latest()->with('user');
         }])->whereSlug($slug)->first();
+        if(!$post){
+            return response()->json(['message' => 'post not found'], 404);
+        }
         $comments = $post->comments;
         return response()->json($comments);
     }
@@ -53,7 +56,7 @@ class PostController extends Controller
             return response()->json([
                 'data' => 'comment not created',
                 'status' => 403
-            ]);
+            ] , 403);
         }
 
         $post = Post::find($postRequest->post_id);
@@ -67,6 +70,7 @@ class PostController extends Controller
             'msg' => 'comment created successfully',
             'comment' => $comment,
             'status' => 201
-        ]);
+        ] , 200);
     }
+
 }

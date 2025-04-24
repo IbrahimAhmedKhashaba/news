@@ -36,7 +36,7 @@ Route::group([
 
     Route::controller(ContactController::class)->prefix('contact')->group(function () {
         Route::get('/', 'index')->name('contact');
-        Route::post('/store', 'store')->name('contact.store');
+        Route::post('/store', 'store')->name('contact.store')->middleware('auth:web');
     });
 
     Route::prefix('account/')->name('dashboard.')->middleware(['auth' , 'verified' , 'CheckUserStatus'])->group(function () {
@@ -67,7 +67,7 @@ Route::group([
 
     Route::get('wait' , function(){
         return view('frontend.wait');
-    })->name('frontend.wait');
+    })->name('wait');
 });
 
 Route::controller(VerificationController::class)->prefix('email')->name('verification.')->group(function () {

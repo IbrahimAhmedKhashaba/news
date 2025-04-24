@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             'street' => 'El Danan',
             'phone'=> '01124782711',
             'email_verified_at' => now(),
-            'password' => Hash::make('789789789'), // password
+            'password' => Hash::make('789789789'),
             'remember_token' => Str::random(10),
         ]);
     }
