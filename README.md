@@ -37,6 +37,7 @@ A Laravel-based news publishing platform that allows users to register, write, a
 - **Bootstrap**
 - **jQuery / Ajax**
 - **Git & GitHub**
+- **Unit Testing**
 
 ---
 
