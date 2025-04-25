@@ -41,7 +41,7 @@ A Laravel-based news publishing platform that allows users to register, write, a
 
 ---
 
-# 🧠 Real Use of Design Patterns in Laravel Projects – Ibrahim Khashaba
+# 🧠 Real Use of Design Patterns in this News Project
 
 As a Laravel Back-End Developer, I apply several design patterns to write scalable, maintainable, and testable applications.  
 Here’s how I used real design patterns in this project:
